@@ -12,3 +12,12 @@
 ```
 docker compose up -d
 ```
+
+## Services
+
+### PGAdmin
+Available in browser via "[SERVERNAME]/pgadmin"
+### Geoserver
+Available in browser via "[SERVERNAME]/geoserver"
+### PostGIS
+Available via "[SERVERNAME]:5432"
