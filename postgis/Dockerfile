@@ -1,0 +1,5 @@
+FROM postgis/postgis:15-3.3
+
+RUN apt-get update
+RUN apt-get install -y postgresql-15-ogr-fdw
+
