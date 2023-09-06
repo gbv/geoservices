@@ -2,7 +2,7 @@
 
 ## Installation
 
-1. Download the geostyler geoserver plugin JAR file [here](https://github.com/geostyler/geostyler-geoserver-plugin/packages/1469140) and save it in the directory "geoserver-plugins".
+1. Download the geostyler geoserver plugin JAR file [here](https://nexus.terrestris.de/#browse/browse:geoserver-extras:org%2Fgeoserver%2Fcommunity%2Fgs-geostyler%2F1.2.2%2Fgs-geostyler-1.2.2-2.22.2.jar) and save it in the directory "geoserver-plugins".
 
 2. Open the files "nginx/nginx.conf" and "geoserver-config/web.xml" and replace [SERVERNAME] with your server domain name.
 
