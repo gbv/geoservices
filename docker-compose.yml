@@ -31,7 +31,7 @@ services:
       - "8080"
     volumes:
       - "./geoserver-data:/opt/geoserver_data"
-      - "./geoserver-plugins/gs-geostyler-1.1.1-20230313.132443-1.jar:/usr/local/tomcat/webapps/geoserver/WEB-INF/lib/gs-geostyler-1.1.1-20230313.132443-1.jar"
+      - "./geoserver-plugins/gs-geostyler-1.2.2-2.22.2.jar:/usr/local/tomcat/webapps/geoserver/WEB-INF/lib/gs-geostyler-1.2.2-2.22.2.jar"
       - "./geoserver-config/web.xml:/usr/local/tomcat/conf/web.xml"    
     environment:
       GEOSERVER_ADMIN_USER: [USERNAME]
