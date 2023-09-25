@@ -24,19 +24,18 @@ services:
     volumes:
       - "./pgadmin-data:/var/lib/pgadmin"
   geoserver:
-    image: kartoza/geoserver:2.22.2
+    image: docker.osgeo.org/geoserver:2.23.2
     container_name: geoserver
     restart: always
     expose:
       - "8080"
     volumes:
       - "./geoserver-data:/opt/geoserver_data"
-      - "./geoserver-plugins/gs-geostyler-1.2.2-2.22.2.jar:/usr/local/tomcat/webapps/geoserver/WEB-INF/lib/gs-geostyler-1.2.2-2.22.2.jar"
-      - "./geoserver-config/web.xml:/usr/local/tomcat/conf/web.xml"    
+      - "./geoserver-plugins:/opt/additional_libs"
+      - "./geoserver-config/web.xml:/opt/apache-tomcat-9.0.75/conf/web.xml"   
     environment:
-      GEOSERVER_ADMIN_USER: [USERNAME]
-      GEOSERVER_ADMIN_PASSWORD: [PASSWORD]
-      GEOSERVER_DATA_DIR: /opt/geoserver_data
+      SKIP_DEMO_DATA: true
+      EXTRA_JAVA_OPTS: -Xms2g -Xmx4g -XX:SoftRefLRUPolicyMSPerMB=36000 -XX:+UseG1GC
   nginx:
     image: nginx:latest
     container_name: nginx
