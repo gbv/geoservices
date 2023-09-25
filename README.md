@@ -6,7 +6,7 @@
 
 2. Open the files "nginx/nginx.conf" and "geoserver-config/web.xml" and replace [SERVERNAME] with your server domain name.
 
-3. Open the file "docker-compose.yml" and replace each occurrence of [USERNAME], [EMAIL] and [PASSWORD] with the respective value.
+3. Open the file "docker-compose.yml" and replace each occurrence of [EMAIL] and [PASSWORD] with the respective value.
 
 3. Run:
 ```
