@@ -7,12 +7,15 @@ services:
     restart: always
     environment:
       POSTGRES_PASSWORD: [PASSWORD]
+      TZ: Europe/Berlin
+      PGTZ: Europe/Berlin
+      DEBIAN_FRONTEND: noninteractive
     volumes:
       - "./postgis-data:/var/lib/postgresql/data"
     ports:
       - "5432:5432"
   pgadmin:
-    image: dpage/pgadmin4
+    image: dpage/pgadmin4:latest
     container_name: pgadmin
     restart: always
     expose:
@@ -21,8 +24,22 @@ services:
       PGADMIN_DEFAULT_EMAIL: [EMAIL]
       PGADMIN_DEFAULT_PASSWORD: [PASSWORD]
       SCRIPT_NAME: /pgadmin
+      PGTZ: Europe/Berlin
     volumes:
       - "./pgadmin-data:/var/lib/pgadmin"
+  pgagent:
+    build: "./pgagent"
+    container_name: pgagent
+    depends_on:
+      postgis:
+        condition: service_started
+    restart: always
+    environment:
+      PGPASSFILE: /opt/.pgpass
+      PGTZ: Europe/Berlin
+    volumes:
+      - "./pgagent/pgpass:/opt/.pgpass"
+      - "./postgis-backups:/postgis-backups"
   geoserver:
     image: docker.osgeo.org/geoserver:2.23.2
     container_name: geoserver

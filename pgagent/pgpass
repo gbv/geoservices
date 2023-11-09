@@ -1,0 +1,2 @@
+postgis:5432:postgres:postgres:[PASSWORD]
+postgis:5432:[DATABASE_NAME]:postgres:[PASSWORD]
