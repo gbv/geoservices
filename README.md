@@ -37,7 +37,7 @@ Available via "[SERVERNAME]:5432"
 
 ```
 pg_dump --username=postgres --dbname=[DATABASE_NAME] --file=/postgis-backups/backup-`date +%Y-%m-%d_%H-%M`.pgdump --verbose -Fc
-		cd /postgis-backups
-		find . ! -name 'backup-????-??-01*' -mtime +7 -exec rm {} \;
+cd /postgis-backups
+find . ! -name 'backup-????-??-01*' -mtime +7 -exec rm {} \;
 ```
 4. Make sure the file pgagent/pgpass contains an entry for each database you want to backup.
