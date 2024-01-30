@@ -2,12 +2,12 @@
 
 ## Installation
 
-1. Download submodule psql-http:
+1. Download submodule pgsql-http:
 ```
 git submodule update --init
 ```
 
-2. Download the geostyler geoserver plugin JAR file [here](https://nexus.terrestris.de/#browse/browse:geoserver-extras:org%2Fgeoserver%2Fcommunity%2Fgs-geostyler%2F1.2.2%2Fgs-geostyler-1.2.2-2.22.2.jar) and save it in the directory "geoserver-plugins".
+2. Download the newest version of the Geostyler Geoserver plugin JAR file [here](https://nexus.terrestris.de/#browse/browse:geoserver-extras:org%2Fgeoserver%2Fcommunity%2Fgs-geostyler) and save it in the directory "geoserver-plugins".
 
 3. Copy the following files:
 	* "docker-compose.template.yml" to "docker-compose.yml"
