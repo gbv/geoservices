@@ -1,3 +1,3 @@
-[submodule "geoserver-plugins/pgsql-http"]
-	path = geoserver-plugins/pgsql-http
+[submodule "postgis/pgsql-http"]
+	path = postgis/pgsql-http
 	url = https://github.com/pramsey/pgsql-http.git
