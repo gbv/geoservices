@@ -1,0 +1,7 @@
+geoserver-data
+pgadmin-data
+postgis-data
+docker-compose.yml
+geoserver-config/web.xml
+pgagent/pgpass
+nginx/nginx.conf
