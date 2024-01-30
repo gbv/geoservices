@@ -2,21 +2,26 @@
 
 ## Installation
 
-1. Download the geostyler geoserver plugin JAR file [here](https://nexus.terrestris.de/#browse/browse:geoserver-extras:org%2Fgeoserver%2Fcommunity%2Fgs-geostyler%2F1.2.2%2Fgs-geostyler-1.2.2-2.22.2.jar) and save it in the directory "geoserver-plugins".
+1. Download submodule psql-http:
+```
+git submodule update --init
+```
 
-2. Copy the following files:
+2. Download the geostyler geoserver plugin JAR file [here](https://nexus.terrestris.de/#browse/browse:geoserver-extras:org%2Fgeoserver%2Fcommunity%2Fgs-geostyler%2F1.2.2%2Fgs-geostyler-1.2.2-2.22.2.jar) and save it in the directory "geoserver-plugins".
+
+3. Copy the following files:
 	* "docker-compose.template.yml" to "docker-compose.yml"
 	* "nginx/nginx.template.conf" to "nginx/nginx.conf"
 	* "geoserver-config/web.template.xml" to "geoserver-config/web.xml"
 	* "pgagent/pgpass.template" to "pgagent/pgpass"
 
-3. Open the files "nginx/nginx.conf" and "geoserver-config/web.xml" and replace [SERVERNAME] with your server domain name.
+4. Open the files "nginx/nginx.conf" and "geoserver-config/web.xml" and replace [SERVERNAME] with your server domain name.
 
-4. Open the file "docker-compose.yml" and replace each occurrence of [EMAIL] and [PASSWORD] with the respective value.
+5. Open the file "docker-compose.yml" and replace each occurrence of [EMAIL] and [PASSWORD] with the respective value.
 
-5. Open the file "pgagent/pgpass" and replace [DATABASE_NAME] with the name of the database and [PASSWORD] with the password of the postgres database user as defined in docker-compose.yml.
+6. Open the file "pgagent/pgpass" and replace [DATABASE_NAME] with the name of the database and [PASSWORD] with the password of the postgres database user as defined in docker-compose.yml.
 
-6. Run:
+7. Run:
 ```
 docker compose up -d
 ```
