@@ -1,4 +1,6 @@
-# NFIS Geoservices
+# Geoservices
+
+Configuration files for running geoservices (Geoserver, PostGIS, pgAdmin, pgAgent) for NFIS and archaeoDox.
 
 ## Installation
 
@@ -7,7 +9,7 @@
 git submodule update --init
 ```
 
-2. Download the newest version of the Geostyler Geoserver plugin JAR file [here](https://nexus.terrestris.de/#browse/browse:geoserver-extras:org%2Fgeoserver%2Fcommunity%2Fgs-geostyler) and save it in the directory "geoserver-plugins".
+2. Copy desired Geoserver plugin files to the directory "geoserver-plugins".
 
 3. Copy the following files:
 	* "docker-compose.template.yml" to "docker-compose.yml"
