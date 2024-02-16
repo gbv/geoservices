@@ -23,7 +23,12 @@ git submodule update --init
 
 6. Open the file "pgagent/pgpass" and replace [DATABASE_NAME] with the name of the database and [PASSWORD] with the password of the postgres database user as defined in docker-compose.yml.
 
-7. Run:
+7. Create nginx logfile:
+```
+touch nginx/error_log.log
+```
+
+8. Run:
 ```
 docker compose up -d
 ```
