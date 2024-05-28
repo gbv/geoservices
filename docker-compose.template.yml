@@ -49,7 +49,7 @@ services:
     volumes:
       - "./geoserver-data:/opt/geoserver_data"
       - "./geoserver-plugins:/opt/additional_libs"
-      - "./geoserver-config/web.xml:/opt/apache-tomcat-9.0.84/conf/web.xml"   
+      - "./geoserver-config/web.xml:/opt/apache-tomcat-9.0.86/conf/web.xml"   
     environment:
       SKIP_DEMO_DATA: true
       EXTRA_JAVA_OPTS: -Xms2g -Xmx4g -XX:SoftRefLRUPolicyMSPerMB=36000 -XX:+UseG1GC
