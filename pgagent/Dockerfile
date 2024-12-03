@@ -9,7 +9,7 @@ RUN curl -fSsL https://www.postgresql.org/media/keys/ACCC4CF8.asc | gpg --dearmo
 RUN echo deb [arch=amd64,arm64,ppc64el signed-by=/usr/share/keyrings/postgresql.gpg] http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg main | tee /etc/apt/sources.list.d/postgresql.list
 
 RUN apt-get update
-RUN apt-get install -y postgresql-client-16
+RUN apt-get install -y postgresql-client-17
 
 ENV TIMEZONE_VALUE=Europe/Berlin
 RUN ln -snf /usr/share/zoneinfo/$TIMEZONE_VALUE /etc/localtime && echo $TIMEZONE_VALUE > /etc/timezone
