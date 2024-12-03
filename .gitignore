@@ -5,3 +5,5 @@ docker-compose.yml
 geoserver-config/web.xml
 pgagent/pgpass
 nginx/nginx.conf
+nginx/error_log.log
+nginx/www
