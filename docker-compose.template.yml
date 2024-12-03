@@ -3,6 +3,7 @@ services:
     build: "./postgis"
     container_name: postgis
     restart: always
+    shm_size: 1gb
     environment:
       POSTGRES_PASSWORD: [PASSWORD]
       TZ: Europe/Berlin
@@ -39,7 +40,7 @@ services:
       - "./pgagent/pgpass:/opt/.pgpass"
       - "./postgis-backups:/postgis-backups"
   geoserver:
-    image: docker.osgeo.org/geoserver:2.26.1
+    image: docker.osgeo.org/geoserver:latest
     container_name: geoserver
     restart: always
     expose:
