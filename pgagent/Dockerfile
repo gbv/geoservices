@@ -1,12 +1,10 @@
-FROM ubuntu:22.04
+FROM ubuntu:24.04
 
 RUN apt-get update
-RUN apt-get upgrade -y
 RUN apt-get install -y dirmngr ca-certificates software-properties-common apt-transport-https lsb-release curl
 
-RUN curl -fSsL https://www.postgresql.org/media/keys/ACCC4CF8.asc | gpg --dearmor | tee /usr/share/keyrings/postgresql.gpg > /dev/null
-
-RUN echo deb [arch=amd64,arm64,ppc64el signed-by=/usr/share/keyrings/postgresql.gpg] http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg main | tee /etc/apt/sources.list.d/postgresql.list
+RUN sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+RUN curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc | gpg --dearmor -o /etc/apt/trusted.gpg.d/postgresql.gpg
 
 RUN apt-get update
 RUN apt-get install -y postgresql-client-17
