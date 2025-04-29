@@ -42,6 +42,16 @@ Available in browser via "[SERVERNAME]/geoserver"
 ### PostGIS
 Available via "[SERVERNAME]:5432"
 
+## Configure plugin pg_cron
+
+Edit the file "postgis-data/postgresql.conf" and add the lines:
+
+```
+shared_preload_libraries = 'pg_cron'
+cron.timezone = 'Europe/Berlin'
+```
+
+
 
 ## Configure database backups
 
