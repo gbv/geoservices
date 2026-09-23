@@ -57,14 +57,14 @@ cron.timezone = 'Europe/Berlin'
 
 1. Open pgAdmin.
 2. Create pgAgent extension for "postgres" database and the databases you want to backup:
-    * Right click "Extensions"
+    * Right click database
 	* Open Query tool
 	* Type in "CREATE EXTENSION pgagent;"
 	* Click "Execute/refresh" (play button)
 3. Open "pgAgent Jobs" and create a new "batch" job with the following code (replace DATABASE_NAME with the name of the database to backup):
 
 ```
-pg_dump --username=postgres --dbname=[DATABASE_NAME] --file=/postgis-backups/backup-`date +%Y-%m-%d_%H-%M`.pgdump --verbose -Fc
+pg_dump --host=postgis --port=5432 --dbname=[DATABASE_NAME] --username=postgres -w --file=/postgis-backups/backup-`date +%Y-%m-%d_%H-%M`.pgdump --verbose -Fc
 cd /postgis-backups
 find . ! -name 'backup-????-??-01*' -mtime +7 -exec rm {} \;
 ```
