@@ -1,4 +1,4 @@
-FROM postgis/postgis:17-3.5
+FROM postgis/postgis:17-3.7
 
 RUN apt-get update && apt-get install -y postgresql-17-ogr-fdw postgresql-server-dev-17 libcurl4-openssl-dev make g++ pgagent postgresql-17-cron
 
